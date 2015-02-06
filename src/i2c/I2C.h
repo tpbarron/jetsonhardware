@@ -49,6 +49,8 @@ public:
 
 	/**
 	 * Execute a command on the new slave
+	 *
+	 * The return value is the byte value of the data.
 	 */
 	char* i2c_command(char slave_addr, char tx_addr, size_t write_bytes, size_t read_bytes);
 
@@ -91,13 +93,13 @@ public:
 
 private:
 
-	char rx_buffer[32]; // receive buffer
-	char tx_buffer[32]; // transmit buffer
+	char _rx_buffer[32]; // receive buffer
+	char _tx_buffer[32]; // transmit buffer
 
-	int ten_bit_address; // usually the device's address is not 10 bit
-	int op_result;
+	int _ten_bit_address; // usually the device's address is not 10 bit
+	int _op_result;
 
-	int i2c_handle; // a file handle to the i2c dev
+	int _i2c_handle; // a file handle to the i2c dev
 
 };
 
