@@ -1,5 +1,9 @@
-# jetsontk1_sensor_interface
+# jetsonhardware
+
 Library interface for sensor access on the NVidia Jetson TK1 via I2C and SPI
+
+Setting up .so linking from Eclipse CDT:
+  * http://linuxtortures.blogspot.com/2012/02/shared-libraries-with-eclipse.html
 
 SPI Interface
   * Basic mode where only receive data and no transmission
@@ -15,3 +19,12 @@ I2C Interface
   * Library example https://www.kernel.org/doc/Documentation/i2c/dev-interface
   * https://learn.sparkfun.com/tutorials/programming-the-pcduino/i2c-communications
 
+
+Shared Library notes:
+  * Versioning - stackoverflow.com/questions/15264693/how-to-version-shared-object-file-created-using-gcc-for-linux
+
+
+Filter notes:
+  * Kalman - stackoverflow.com/questions/18152524/kalman-filter-with-acceleration
+  
+  
