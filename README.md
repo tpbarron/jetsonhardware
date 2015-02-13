@@ -21,10 +21,10 @@ I2C Interface
 
 
 Shared Library notes:
-  * Versioning - stackoverflow.com/questions/15264693/how-to-version-shared-object-file-created-using-gcc-for-linux
+  * Versioning - http://stackoverflow.com/questions/15264693/how-to-version-shared-object-file-created-using-gcc-for-linux
 
 
 Filter notes:
-  * Kalman - stackoverflow.com/questions/18152524/kalman-filter-with-acceleration
+  * Kalman - http://stackoverflow.com/questions/18152524/kalman-filter-with-acceleration
   
   
