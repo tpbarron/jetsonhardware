@@ -64,7 +64,7 @@ void I2C::i2c_read(size_t bytes) {
 	_op_result = read(_i2c_handle, _rx_buffer, bytes);
 }
 
-char* I2C::i2c_get_rx_buffer() {
+const char* I2C::i2c_get_rx_buffer() const {
 	return _rx_buffer;
 }
 

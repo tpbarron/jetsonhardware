@@ -76,8 +76,11 @@ public:
 
 	/**
 	 * Get the response from the slave
+	 *
+	 * TODO: check this const usage. Want the
+	 * data to be const
 	 */
-	char* i2c_get_rx_buffer();
+	const char* i2c_get_rx_buffer() const;
 
 	/**
 	 * Clear the tx buffer

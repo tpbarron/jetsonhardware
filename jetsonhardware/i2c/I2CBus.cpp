@@ -26,12 +26,17 @@ I2CBus::I2CBus(std::string file) : _bus_file(file) {
 I2CBus::~I2CBus() {
 }
 
-const I2C& I2CBus::get_bus_i2c() {
+const I2C& I2CBus::get_bus_i2c() const {
 	return _i2c;
+}
+
+const std::string& I2CBus::get_bus_file() const {
+	return _bus_file;
 }
 
 std::string I2CBus::to_string() {
 	std::string s;
+	s += "I2CBus [bus file: " + _bus_file + "]";
 	return s;
 }
 

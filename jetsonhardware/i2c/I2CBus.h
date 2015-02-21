@@ -27,20 +27,30 @@ class I2CBus {
 
 public:
 
-	enum I2C_DEV_FILE {
-
-	};
-
 	static const std::string GEN1_I2C;
 	static const std::string GEN2_I2C;
 	static const std::string PWR_I2C;
 	static const std::string CAM_I2C;
 
+	/**
+	 * Never instantiate this class directly. Instead use
+	 * the I2CDeviceFactory to ensure that duplicate bus
+	 * objects are not created.
+	 */
 	I2CBus();
 	I2CBus(std::string file);
 	~I2CBus();
 
-	const I2C& get_bus_i2c();
+	/**
+	 * Return the I2C interface associated with this bus
+	 */
+	const I2C& get_bus_i2c() const;
+
+	/**
+	 * Return the file this bus communicates through
+	 */
+	const std::string& get_bus_file() const;
+
 
 	std::string to_string();
 
