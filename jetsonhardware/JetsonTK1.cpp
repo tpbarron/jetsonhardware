@@ -22,6 +22,10 @@ const jetsonhardware::i2c::I2CBus& JetsonTK1::getI2CBus(const std::string file) 
 	return _i2c_bus_factory.get_i2c_bus(file);
 }
 
+const jetsonhardware::spi::SPIBus& JetsonTK1::getSPIBus(const std::string file) {
+	return _spi_bus_factory.get_spi_bus(file);
+}
+
 std::string JetsonTK1::to_string() {
 	std::string s = "";
 	s += "JetsonTK1: ";
