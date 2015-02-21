@@ -8,6 +8,10 @@
 #ifndef SPI_SPIBUSFACTORY_H_
 #define SPI_SPIBUSFACTORY_H_
 
+#include <map>
+
+#include "SPIBus.h"
+
 namespace jetsonhardware {
 namespace spi {
 
@@ -17,6 +21,12 @@ public:
 
 	SPIBusFactory();
 	~SPIBusFactory();
+
+	const SPIBus& get_spi_bus(std::string file);
+
+private:
+
+	std::map<std::string, SPIBus> _spi_bus_map;
 
 };
 

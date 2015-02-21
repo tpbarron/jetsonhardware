@@ -12,7 +12,10 @@ namespace spi {
 
 SPIBus::SPIBus() {
 	// TODO Auto-generated constructor stub
+}
 
+SPIBus::SPIBus(std::string file) : _bus_file(file) {
+	// TODO: initialize SPI object from file
 }
 
 SPIBus::~SPIBus() {
