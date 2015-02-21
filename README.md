@@ -2,6 +2,11 @@
 
 Library interface for sensor access on the NVidia Jetson TK1 via I2C and SPI
 
+Library todo:
+  * Add error handling
+    * File already in use
+  * 
+
 Setting up .so linking from Eclipse CDT:
   * http://linuxtortures.blogspot.com/2012/02/shared-libraries-with-eclipse.html
 
