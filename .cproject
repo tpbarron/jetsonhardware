@@ -29,7 +29,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.327257577" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug">
 								<option id="gnu.cpp.compiler.so.debug.option.optimization.level.2059919233" name="Optimization Level" superClass="gnu.cpp.compiler.so.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.so.debug.option.debugging.level.2144264319" name="Debug Level" superClass="gnu.cpp.compiler.so.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.pic.1004156570" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.compiler.option.other.pic.1004156570" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic" value="true" valueType="boolean"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.828498099" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.479612685" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug">
@@ -52,8 +52,18 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.so.debug.572825209.1081082715" name="/" resourcePath="docs">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.so.debug.1118016590" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.so.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1033148236" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.220770804"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.6514639" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.so.debug.327257577"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.so.debug.1522387376" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.so.debug.479612685"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.so.debug.1065963848" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.so.debug.1963885175"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.32088002" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.so.debug.1440368129"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.so.debug.390170457" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.so.debug.708342554"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="jetsonhardware" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="docs|jetsonhardware" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="jetsonhardware"/>
 					</sourceEntries>
 				</configuration>
@@ -138,5 +148,12 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/jetsonhardware"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/jetsonhardware"/>
+		</configuration>
+	</storageModule>
 </cproject>
