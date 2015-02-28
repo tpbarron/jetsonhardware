@@ -26,8 +26,8 @@ class I2CDevice {
 
 public:
 
-	I2CDevice(unsigned int addr);
-	I2CDevice(unsigned int addr, I2CBus &bus);
+	I2CDevice();
+	I2CDevice(I2CBus &bus);
 
 	~I2CDevice();
 
@@ -37,21 +37,21 @@ public:
 	void set_i2c_bus(I2CBus &bus);
 
 	/**
-	 * Returns true if the address for this device is 10 bit
+	 * Get the Bus with this device
 	 */
-	bool is_ten_bit_addr() const;
+	const I2CBus& get_i2c_bus() const;
 
 	/**
 	 * Send a command to this device
 	 *
 	 * TODO: check this const usage
 	 */
-	const char* send_command(char tx_addr, size_t write_bytes, size_t read_bytes) const;
+	const char* send_command(unsigned int dev_addr, char tx_addr, size_t write_bytes, size_t read_bytes) const;
 
-	/**
-	 * Send a command to this device from the command set
-	 */
-	const char* send_command(std::string name) const;
+//	/**
+//	 * Send a command to this device from the command set
+//	 */
+//	const char* send_command(std::string name) const;
 
 
 	void add_command(I2CDeviceCommand& cmd);
@@ -61,11 +61,6 @@ public:
 
 
 private:
-
-	/**
-	 * This device's address
-	 */
-	unsigned int _address;
 
 	/**
 	 * The bus this device is on

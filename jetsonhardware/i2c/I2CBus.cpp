@@ -10,17 +10,17 @@
 namespace jetsonhardware {
 namespace i2c {
 
-const std::string I2CBus::GEN1_I2C = "GEN1_I2C";
-const std::string I2CBus::GEN2_I2C = "GEN2_I2C";
-const std::string I2CBus::PWR_I2C = "PWR_I2C";
-const std::string I2CBus::CAM_I2C = "CAM_I2C";
+const std::string I2CBus::GEN1_I2C = "/dev/i2c-0";
+const std::string I2CBus::GEN2_I2C_33V = "/dev/i2c-1";
+const std::string I2CBus::CAM1_I2C_33V = "/dev/i2c-2";
+const std::string I2CBus::PWR_I2C = "/dev/i2c-4";
 
 
 I2CBus::I2CBus() {
 }
 
 I2CBus::I2CBus(std::string file) : _bus_file(file) {
-	// TODO: initialize I2C interface for this bus
+	_i2c.i2c_open(file);
 }
 
 I2CBus::~I2CBus() {

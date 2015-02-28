@@ -28,9 +28,10 @@ class I2CBus {
 public:
 
 	static const std::string GEN1_I2C;
-	static const std::string GEN2_I2C;
+	static const std::string GEN2_I2C_33V;
+	static const std::string CAM1_I2C_33V;
 	static const std::string PWR_I2C;
-	static const std::string CAM_I2C;
+
 
 	/**
 	 * Never instantiate this class directly. Instead use

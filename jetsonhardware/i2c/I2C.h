@@ -17,6 +17,7 @@
 #include <string> // std::string
 #include <string.h> // memset
 #include <stdio.h>
+#include "stdint.h"
 
 
 namespace jetsonhardware {
@@ -33,36 +34,55 @@ public:
 	/*
 	 * Open connection to peripheral
 	 */
-	void i2c_open(std::string file, int mode);
+	void i2c_open(std::string file, int mode = O_RDWR);
+
+
+	/**
+	 * Returns true if the address for this device is 10 bit
+	 */
+	bool is_ten_bit_addr(unsigned int addr) const;
+
+
+	void write_byte(unsigned int addr, uint8_t sub_addr, unsigned int data);
+
+	uint8_t read_byte(unsigned int addr, uint8_t sub_addr);
+
+
+
+
+
+
+
+
 
 	/**
 	 * Tell the peripheral whether the device is 10 bit
 	 */
-	void i2c_set_ten_bit(bool is_ten_bit);
+	void set_ten_bit(bool is_ten_bit);
 
 	/**
 	 * Set the address of the device we want to talk to
 	 */
-	void i2c_set_slave(char addr);
+	void set_slave(char addr);
 
 
 	/**
 	 * Execute a command on the current slave
 	 */
-	char* i2c_command(char tx_addr, size_t write_bytes, size_t read_bytes);
+	char* command(char tx_addr, size_t write_bytes, size_t read_bytes);
 
 	/**
 	 * Execute a command on the new slave
 	 *
 	 * The return value is the byte value of the data.
 	 */
-	char* i2c_command(char slave_addr, char tx_addr, size_t write_bytes, size_t read_bytes);
+	char* command(char slave_addr, char tx_addr, size_t write_bytes, size_t read_bytes);
 
 
 	/**
 	 * Set the tx buffer addr to be read from the device
 	 */
-	void i2c_set_tx(char addr);
+	void set_tx(char addr);
 
 	/**
 	 * Send data to slave
@@ -80,23 +100,23 @@ public:
 	 * TODO: check this const usage. Want the
 	 * data to be const
 	 */
-	const char* i2c_get_rx_buffer() const;
+	const char* get_rx_buffer() const;
 
 	/**
 	 * Clear the tx buffer
 	 */
-	void i2c_clear_tx();
+	void clear_tx();
 
 	/**
 	 * Clear the rx buffer
 	 */
-	void i2c_clear_rx();
+	void clear_rx();
 
 
 	/**
 	 * Clear both buffers
 	 */
-	void i2c_clear_buffers();
+	void clear_buffers();
 
 private:
 
@@ -106,7 +126,7 @@ private:
 	int _ten_bit_address; // usually the device's address is not 10 bit
 	int _op_result;
 
-	int _i2c_handle; // a file handle to the i2c dev
+	int _handle; // a file handle to the i2c dev
 
 };
 
